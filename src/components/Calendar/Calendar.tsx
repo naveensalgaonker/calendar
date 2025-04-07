@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import Settings from './Settings';
-import { ToggleButton, ToggleButtonGroup } from '@mui/material';
 import { ViewType } from '../../types/viewModes';
 
 const Calendar = () => {
@@ -15,7 +14,7 @@ const Calendar = () => {
     <div>
       <Settings />
 
-      <ToggleButtonGroup
+      {/* <ToggleButtonGroup
         color="primary"
         value={view}
         exclusive
@@ -25,7 +24,7 @@ const Calendar = () => {
         <ToggleButton value="day">Day</ToggleButton>
         <ToggleButton value="week">Week</ToggleButton>
         <ToggleButton value="month">Month</ToggleButton>
-      </ToggleButtonGroup>
+      </ToggleButtonGroup> */}
 
     </div>
   );
