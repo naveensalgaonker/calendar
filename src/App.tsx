@@ -1,10 +1,11 @@
 import { useState } from 'react'
+import Calendar from './components/Calendar/Calendar'
 
 function App() {
 
   return (
     <>
-      <h2>My App</h2>
+      <Calendar/>
     </>
   )
 }
