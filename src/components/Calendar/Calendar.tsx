@@ -1,33 +1,20 @@
-import React, { useState } from 'react';
-import Settings from './Settings';
-import { ViewType } from '../../types/viewModes';
+import { EventType, SubViewType, ViewType } from '../../types/types'
+import DayView from '../CalendarView/DayView'
+import MonthView from '../CalendarView/MonthView'
+import WeekView from '../CalendarView/WeekView'
+import { DateTime } from "luxon";
 
-const Calendar = () => {
-  const [view, setView] = useState<ViewType>('day')
-
-  const handleChange = (event: any, view: ViewType) => {
-    setView(view)
-  }
-
-
+const Calendar = ({ view, subViewList, events }: { view: ViewType, subViewList: SubViewType[], events: any }) => {
+  let date = DateTime.now()
   return (
-    <div>
-      <Settings />
-
-      {/* <ToggleButtonGroup
-        color="primary"
-        value={view}
-        exclusive
-        onChange={handleChange}
-        aria-label="Platform"
-      >
-        <ToggleButton value="day">Day</ToggleButton>
-        <ToggleButton value="week">Week</ToggleButton>
-        <ToggleButton value="month">Month</ToggleButton>
-      </ToggleButtonGroup> */}
-
+    <div className="w-[95vw] h-[76vh] overflow-auto mt-4">
+      {/* <h1>Current View: {view}</h1> */}
+      {/* Additional content can be added here based on the selected view */}
+      {view === 'day' && <DayView width={100} date={date} subViewList={subViewList} event={events} />}
+      {view === 'week' && <WeekView subViewList={subViewList} event={events} />}
+      {view === 'month' && <MonthView subViewList={subViewList} event={events} />}
     </div>
-  );
-};
+  )
+}
 
-export default Calendar;
+export default Calendar

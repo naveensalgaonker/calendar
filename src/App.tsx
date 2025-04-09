@@ -1,12 +1,9 @@
-import { useState } from 'react'
-import Calendar from './components/Calendar/Calendar'
+import CalendarContainer from './components/Calendar/CalendarContainer'
 
 function App() {
 
   return (
-    <>
-      <Calendar/>
-    </>
+      <CalendarContainer/>
   )
 }
 
